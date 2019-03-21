@@ -43,8 +43,9 @@ public class MyDeque<E>{
   public E removeLast(E element){
     return element;
   }
-  public E getFirst(E element){
-    return element;
+
+  public E getFirst(){
+    return data[start];
   }
 
   public E getLast(){
