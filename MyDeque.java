@@ -9,6 +9,7 @@ public class MyDeque<E>{
     start = 0;
     end = 0;
   }
+
   @SuppressWarnings("unchecked")
   public MyDeque(int initialCapacity){
     data = (E[])new Object[initialCapacity];
@@ -16,9 +17,11 @@ public class MyDeque<E>{
     start = 0;
     end = 0;
   }
+
   public int size(){
-    return 1;
+    return size;
   }
+
   public String toString(){
     return "";
   }
