@@ -23,8 +23,14 @@ public class MyDeque<E>{
   }
 
   public String toString(){
-    return "";
+    String ans = "{";/*
+    if (data.length - start < size){
+
+    }
+    for (int i = start; i < )*/
+    return ans + "}";
   }
+
   public void addFirst(E element){
     return;
   }
@@ -40,7 +46,8 @@ public class MyDeque<E>{
   public E getFirst(E element){
     return element;
   }
-  public E getLast(E element){
-    return element;
+
+  public E getLast(){
+    return data[end];
   }
 }
