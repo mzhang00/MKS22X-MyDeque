@@ -1,6 +1,6 @@
 public class MyDeque<E>{
-  private E[] data;
-  private int size, start, end;
+  private static E[] data;
+  private static int size, start, end;
 
   @SuppressWarnings("unchecked")
   public MyDeque(){
@@ -23,11 +23,15 @@ public class MyDeque<E>{
   }
 
   public String toString(){
-    String ans = "{";/*
-    if (data.length - start < size){
-
+    String ans = "{";
+    if (end > start){
+      for (int i = start; i <= end; i++){
+        ans = ans + "" + data[i].toString() + " ";
+      }
+//need to FIX
+    }else{
+      //
     }
-    for (int i = start; i < )*/
     return ans + "}";
   }
 
@@ -51,4 +55,18 @@ public class MyDeque<E>{
   public E getLast(){
     return data[end];
   }
+
+/*
+  public static void main(String[] args) {
+    data = new int[4];
+    data[0] = 1;
+    data[1] = 2;
+    data[2] = 3;
+    data[3] = 4;
+    start = 0;
+    end = 3;
+    System.out.println(this.toString());
+  }
+*/
+
 }
