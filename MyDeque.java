@@ -42,6 +42,10 @@ public class MyDeque<E>{
     return ans.substring(0, ans.length() - 1) + "}";
   }
 
+  private void resize(){
+    
+  }
+
   public void addFirst(E element){
     return;
   }
