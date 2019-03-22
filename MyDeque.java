@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.lang.NullPointerException;
 
 public class MyDeque<E>{
   private E[] data;
