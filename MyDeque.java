@@ -42,8 +42,26 @@ public class MyDeque<E>{
     return ans.substring(0, ans.length() - 1) + "}";
   }
 
+  @SuppressWarnings("unchecked")
   private void resize(){
-    
+    E[] newdata = (E[])new Object[data.length * 2 + 1];
+    int counter = 0;
+    if (end > start){
+      for (int i = start; i <= end; i++){
+        newdata[counter] = data[i];
+        counter++;
+      }
+    }else{
+      for (int i = start; i < data.length; i++){
+        newdata[counter] = data[i];
+        counter++;
+      }
+      for (int i = 0; i <= end; i++){
+        newdata[counter] = data[i];
+        counter++;
+      }
+    }
+    data = newdata;
   }
 
   public void addFirst(E element){
