@@ -44,9 +44,15 @@ public class MyDeque<E>{
     return;
   }
   public E removeFirst(E element){
+    if (size == 0){
+      throw new NoSuchElementException();
+    }
     return element;
   }
   public E removeLast(E element){
+    if (size == 0){
+      throw new NoSuchElementException();
+    }
     return element;
   }
 
