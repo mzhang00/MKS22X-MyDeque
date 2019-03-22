@@ -27,7 +27,7 @@ public class MyDeque<E>{
 
   public String toString(){
     String ans = "{";
-    if (end > start){
+    if (end >= start){
       for (int i = start; i <= end; i++){
         ans = ans + "" + data[i].toString() + " ";
       }
@@ -46,7 +46,7 @@ public class MyDeque<E>{
   private void resize(){
     E[] newdata = (E[])new Object[data.length * 2 + 1];
     int counter = 0;
-    if (end > start){
+    if (end >= start){
       for (int i = start; i <= end; i++){
         newdata[counter] = data[i];
         counter++;
@@ -65,10 +65,12 @@ public class MyDeque<E>{
   }
 
   public void addFirst(E element){
+    //check if size is max, if so then resize
     return;
   }
 
   public void addLast(E element){
+    //check if size is max, if so then resize
     return;
   }
 
