@@ -70,11 +70,18 @@ public class MyDeque<E>{
   public void addLast(E element){
     return;
   }
-  public E removeFirst(E element){
+  public E removeFirst(){
     if (size == 0){
       throw new NoSuchElementException();
     }
-    return element;
+    E value = data[start];
+    if (start != data.length - 1){
+      start++;
+    }else{
+      start = 0;
+    }
+    size--;
+    return value;
   }
   public E removeLast(){
     if (size == 0){
