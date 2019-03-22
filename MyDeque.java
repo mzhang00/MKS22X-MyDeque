@@ -67,9 +67,11 @@ public class MyDeque<E>{
   public void addFirst(E element){
     return;
   }
+
   public void addLast(E element){
     return;
   }
+
   public E removeFirst(){
     if (size == 0){
       throw new NoSuchElementException();
@@ -83,6 +85,7 @@ public class MyDeque<E>{
     size--;
     return value;
   }
+
   public E removeLast(){
     if (size == 0){
       throw new NoSuchElementException();
