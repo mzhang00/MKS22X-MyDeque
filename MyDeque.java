@@ -1,6 +1,8 @@
+import java.util.NoSuchElementException;
+
 public class MyDeque<E>{
-  private static E[] data;
-  private static int size, start, end;
+  private E[] data;
+  private int size, start, end;
 
   @SuppressWarnings("unchecked")
   public MyDeque(){
@@ -49,24 +51,16 @@ public class MyDeque<E>{
   }
 
   public E getFirst(){
+    if (size == 0){
+      throw new NoSuchElementException();
+    }
     return data[start];
   }
 
   public E getLast(){
+    if (size == 0){
+      throw new NoSuchElementException();
+    }
     return data[end];
   }
-
-/*
-  public static void main(String[] args) {
-    data = new int[4];
-    data[0] = 1;
-    data[1] = 2;
-    data[2] = 3;
-    data[3] = 4;
-    start = 0;
-    end = 3;
-    System.out.println(this.toString());
-  }
-*/
-
 }
