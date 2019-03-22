@@ -31,11 +31,15 @@ public class MyDeque<E>{
       for (int i = start; i <= end; i++){
         ans = ans + "" + data[i].toString() + " ";
       }
-//need to FIX
     }else{
-      //
+      for (int i = start; i < data.length; i++){
+        ans = ans + "" + data[i].toString() + " ";
+      }
+      for (int i = 0; i <= end; i++){
+        ans = ans + "" + data[i].toString() + " ";
+      }
     }
-    return ans + "}";
+    return ans.substring(0, ans.length() - 1) + "}";
   }
 
   public void addFirst(E element){
