@@ -9,5 +9,11 @@ public class Driver2{
   //      System.out.println(two == null);
         my.addFirst(two);
         System.out.println(my.toString());
+        my.addFirst(Integer.valueOf(3));
+        System.out.println(my.toString());
+        my.addLast(Integer.valueOf(6));
+        System.out.println(my.toString());
+        my.addLast(Integer.valueOf(10));
+        System.out.println(my.toString());
     }
 }

@@ -105,22 +105,24 @@ public class MyDeque<E>{
         resize();
       }
       if (end == data.length - 1){
+        data[end] = element;
         end = 0;
-      }else{
+      }else{        
+        data[end] = element;
         end++;
       }
-      data[end] = element;
       size++;
     }else{    
       if (data.length == data.length - start + end + 1){
         resize();
       }
       if (end == data.length - 1){
+        data[end] = element;
         end = 0;
       }else{
+        data[end] = element;
         end++;
       }
-      data[end] = element;
       size++;
     }
   }
