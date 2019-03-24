@@ -65,11 +65,17 @@ public class MyDeque<E>{
   }
 
   public void addFirst(E element){
+    if (E == null){
+      throw new NullPointerException();
+    }
     //check if size is max, if so then resize
     return;
   }
 
   public void addLast(E element){
+    if (E == null){
+      throw new NullPointerException();
+    }
     //check if size is max, if so then resize
     return;
   }
