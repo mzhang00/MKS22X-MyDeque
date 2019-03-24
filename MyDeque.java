@@ -26,6 +26,9 @@ public class MyDeque<E>{
   }
 
   public String toString(){
+    if (size == 0){
+      return "{}";
+    }
     String ans = "{";
     if (end >= start){
       for (int i = start; i <= end; i++){
@@ -78,6 +81,7 @@ public class MyDeque<E>{
         start--;
       }
       data[start] = element;
+      size++;
     }else{    
       if (data.length == data.length - start + end + 1){
         resize();
@@ -88,6 +92,7 @@ public class MyDeque<E>{
         start--;
       }
       data[start] = element;
+      size++;
     }
   }
 
@@ -105,6 +110,7 @@ public class MyDeque<E>{
         end++;
       }
       data[end] = element;
+      size++;
     }else{    
       if (data.length == data.length - start + end + 1){
         resize();
@@ -115,6 +121,7 @@ public class MyDeque<E>{
         end++;
       }
       data[end] = element;
+      size++;
     }
   }
 
