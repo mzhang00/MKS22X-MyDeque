@@ -95,8 +95,27 @@ public class MyDeque<E>{
     if (E == null){
       throw new NullPointerException();
     }
-    //check if size is max, if so then resize
-    return;
+    if (end >= start){
+      if (end - start + 1 == data.length){
+        resize();
+      }
+      if (end == data.length - 1){
+        end = 0;
+      }else{
+        end++;
+      }
+      data[end] = element;
+    }else{    
+      if (data.length == data.length - start + end + 1){
+        resize();
+      }
+      if (end == data.length - 1){
+        end = 0;
+      }else{
+        end++;
+      }
+      data[end] = element;
+    }
   }
 
   public E removeFirst(){
