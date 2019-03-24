@@ -31,15 +31,15 @@ public class MyDeque<E>{
     }
     String ans = "{";
     if (end >= start){
-      for (int i = start; i <= end; i++){
-        ans = ans + "" + data[i].toString() + " ";
+      for (int i = start; i <= end - 1; i++){
+        ans = ans + data[i].toString() + " ";
       }
     }else{
       for (int i = start; i < data.length; i++){
-        ans = ans + "" + data[i].toString() + " ";
+        ans = ans + data[i].toString() + " ";
       }
-      for (int i = 0; i <= end; i++){
-        ans = ans + "" + data[i].toString() + " ";
+      for (int i = 0; i <= end - 1; i++){
+        ans = ans + data[i].toString() + " ";
       }
     }
     return ans.substring(0, ans.length() - 1) + "}";
