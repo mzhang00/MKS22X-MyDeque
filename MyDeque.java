@@ -68,8 +68,27 @@ public class MyDeque<E>{
     if (E == null){
       throw new NullPointerException();
     }
-    //check if size is max, if so then resize
-    return;
+    if (end >= start){
+      if (end - start + 1 == data.length){
+        resize();
+      }
+      if (start == 0){
+        start = data.length - 1;
+      }else{
+        start--;
+      }
+      data[start] = element;
+    }else{    
+      if (data.length == data.length - start + end + 1){
+        resize();
+      }
+      if (start == 0){
+        start = data.length - 1;
+      }else{
+        start--;
+      }
+      data[start] = element;
+    }
   }
 
   public void addLast(E element){
