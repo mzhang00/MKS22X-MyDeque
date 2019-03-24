@@ -5,8 +5,8 @@ public class Driver2{
         MyDeque<Integer> my = new MyDeque<>();
         System.out.println(my);
         Integer two = Integer.valueOf(2);
-//        System.out.println(two);
-  //      System.out.println(two == null);
+        //System.out.println(two);
+        //System.out.println(two == null);
         my.addFirst(two);
         System.out.println(my.toString());
         my.addFirst(Integer.valueOf(3));
