@@ -72,7 +72,7 @@ public class MyDeque<E>{
       throw new NullPointerException();
     }
     if (end >= start){
-      if (end - start + 1 == data.length){
+      if (size == data.length){
         resize();
       }
       if (start == 0){
@@ -82,8 +82,8 @@ public class MyDeque<E>{
       }
       data[start] = element;
       size++;
-    }else{    
-      if (data.length == data.length - start + end + 1){
+    }else{
+      if (size == data.length){
         resize();
       }
       if (start == 0){
@@ -101,19 +101,19 @@ public class MyDeque<E>{
       throw new NullPointerException();
     }
     if (end >= start){
-      if (end - start + 1 == data.length){
+      if (size == data.length){
         resize();
       }
       if (end == data.length - 1){
         data[end] = element;
         end = 0;
-      }else{        
+      }else{
         data[end] = element;
         end++;
       }
       size++;
-    }else{    
-      if (data.length == data.length - start + end + 1){
+    }else{
+      if (size == data.length){
         resize();
       }
       if (end == data.length - 1){
@@ -167,5 +167,25 @@ public class MyDeque<E>{
       throw new NoSuchElementException();
     }
     return data[end];
+  }
+
+  public static void main(String[] args) {
+    MyDeque<Integer> newde = new MyDeque<>();
+    newde.addLast(2);
+    newde.addFirst(3);
+    for (int i = 4; i < 10; i++){
+      if (i % 2 == 0){
+        newde.addLast(i);
+      }else{
+        newde.addFirst(i);
+      }
+    }
+    System.out.println(newde);
+    System.out.println(newde.size());
+    newde.addFirst(3);
+    System.out.println(newde);
+    //HAVE TO FIX BELOW
+    newde.addFirst(3);
+    System.out.println(newde);
   }
 }
