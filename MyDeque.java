@@ -1,5 +1,5 @@
-import java.util.NoSuchElementException;
-import java.lang.NullPointerException;
+import java.util.*;
+import java.lang.*;
 
 public class MyDeque<E>{
   private E[] data;
@@ -22,7 +22,7 @@ public class MyDeque<E>{
   }
 
   public int size(){
-    return size;
+    return this.size;
   }
 
   public String toString(){
@@ -168,7 +168,10 @@ public class MyDeque<E>{
     if (size == 0){
       throw new NoSuchElementException();
     }
-    return data[end];
+    if (end == 0){
+      return data[data.length - 1]; 
+    }
+    return data[end - 1];
   }
 
   public void printData(){
@@ -181,7 +184,13 @@ public class MyDeque<E>{
   public static void main(String[] args) {
     MyDeque<Integer> newde = new MyDeque<>();
     newde.addLast(2);
+    System.out.println(newde.getLast());
+    System.out.println(newde);
+    System.out.println(newde.size());
     newde.addFirst(3);
+    System.out.println(newde.getFirst());
+    System.out.println(newde);
+    System.out.println(newde.size());
     for (int i = 4; i < 10; i++){
       if (i % 2 == 0){
         newde.addLast(i);
@@ -195,7 +204,6 @@ public class MyDeque<E>{
     System.out.println(newde);
     newde.printData();
     System.out.println(newde.size());
-    //HAVE TO FIX BELOW
     newde.addLast(100);
     System.out.println(newde);
     newde.addLast(101);
@@ -222,5 +230,6 @@ public class MyDeque<E>{
     newde.addLast(101);
     System.out.println(newde);
     newde.printData();
+    System.out.println(newde.getLast());
   }
 }
