@@ -30,7 +30,7 @@ public class MyDeque<E>{
       return "{}";
     }
     String ans = "{";
-    if (end >= start){
+    if (end > start){
       for (int i = start; i <= end - 1; i++){
         ans = ans + data[i].toString() + " ";
       }
@@ -49,7 +49,7 @@ public class MyDeque<E>{
   private void resize(){
     E[] newdata = (E[])new Object[data.length * 2 + 1];
     int counter = 0;
-    if (end >= start){
+    if (end > start){
       for (int i = start; i <= end; i++){
         newdata[counter] = data[i];
         counter++;
@@ -64,6 +64,8 @@ public class MyDeque<E>{
         counter++;
       }
     }
+    start = 0;
+    end = counter - 1;
     data = newdata;
   }
 
@@ -71,7 +73,7 @@ public class MyDeque<E>{
     if (element == null){
       throw new NullPointerException();
     }
-    if (end >= start){
+    if (end > start){
       if (size == data.length){
         resize();
       }
@@ -100,7 +102,7 @@ public class MyDeque<E>{
     if (element == null){
       throw new NullPointerException();
     }
-    if (end >= start){
+    if (end > start){
       if (size == data.length){
         resize();
       }
@@ -169,6 +171,13 @@ public class MyDeque<E>{
     return data[end];
   }
 
+  public void printData(){
+    for (E i : data){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+  }
+
   public static void main(String[] args) {
     MyDeque<Integer> newde = new MyDeque<>();
     newde.addLast(2);
@@ -184,8 +193,34 @@ public class MyDeque<E>{
     System.out.println(newde.size());
     newde.addFirst(3);
     System.out.println(newde);
+    newde.printData();
+    System.out.println(newde.size());
     //HAVE TO FIX BELOW
-    newde.addFirst(3);
+    newde.addLast(100);
     System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.printData();
+    for (int i = 4; i < 10; i++){
+      if (i % 2 == 0){
+        newde.addLast(i);
+      }else{
+        newde.addFirst(i);
+      }
+    }
+    System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.addLast(101);
+    System.out.println(newde);
+    newde.printData();
   }
 }
