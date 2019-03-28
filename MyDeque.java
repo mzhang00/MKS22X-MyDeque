@@ -22,7 +22,7 @@ public class MyDeque<E>{
   }
 
   public int size(){
-    return this.size;
+    return size;
   }
 
   public String toString(){
@@ -182,6 +182,7 @@ public class MyDeque<E>{
   }
 
   public static void main(String[] args) {
+    /*
     MyDeque<Integer> newde = new MyDeque<>();
     newde.addLast(2);
     System.out.println(newde.getLast());
@@ -230,6 +231,6 @@ public class MyDeque<E>{
     newde.addLast(101);
     System.out.println(newde);
     newde.printData();
-    System.out.println(newde.getLast());
+    System.out.println(newde.getLast());*/
   }
 }
