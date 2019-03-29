@@ -35,7 +35,4 @@ public class Calculator{
     }
     return deq.getFirst();    
   }
-  public static void main(String[] args){
-    System.out.println("+-*/%".contains("1.0"));
-  }
 }
