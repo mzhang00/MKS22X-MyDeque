@@ -147,7 +147,13 @@ public class MyDeque<E>{
     if (size == 0){
       throw new NoSuchElementException();
     }
-    E value = data[end];
+    E value;
+    try{
+      value = data[end - 1];
+    }
+    catch(ArrayIndexOutOfBoundsException e){
+      value = data[data.length - 1];
+    }
     if (end != 0){
       end--;
     }else{
@@ -181,7 +187,21 @@ public class MyDeque<E>{
     System.out.println();
   }
 
+  public int getEnd(){
+    return end;
+  }
+
   public static void main(String[] args) {
+    /*MyDeque<Integer> newde = new MyDeque<>();
+    for (int i = 0; i < 100; i++){
+      newde.addFirst(i);
+    }
+    System.out.println(newde);
+    //System.out.println(newde.size());
+    for (int i = 0; i < 100; i++){
+      System.out.print(newde.removeLast() + " ");
+    }
+    */
     /*
     MyDeque<Integer> newde = new MyDeque<>();
     newde.addLast(2);
