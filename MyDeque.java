@@ -187,10 +187,6 @@ public class MyDeque<E>{
     System.out.println();
   }
 
-  public int getEnd(){
-    return end;
-  }
-
   public static void main(String[] args) {
     /*MyDeque<Integer> newde = new MyDeque<>();
     for (int i = 0; i < 100; i++){
